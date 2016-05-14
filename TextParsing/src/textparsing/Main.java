@@ -5,6 +5,9 @@
  */
 package textparsing;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  *
  * @author gaffs
@@ -15,7 +18,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        
+        
     }
     
 }
