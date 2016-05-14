@@ -8,6 +8,8 @@ package textparsing;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -28,13 +30,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
         //System.out.println(text);
-        String textReadeble = text.replace(".","").replace(",", "").replace("!", "").toLowerCase();
+        String textReadeble = text.replace(".","").replace(",", "").replace("!", "").replace("?", "").toLowerCase();
       //  System.out.println(textReadeble);
         
         String[] textArray = textReadeble.split(" ");
         
-        System.out.println(Arrays.toString(textArray));
+       System.out.println(Arrays.toString(textArray));
+        Map<String,Integer> countRepetitions = new HashMap<String,Integer>();
         
+        for (int i = 0; i < textArray.length; i++){
+            //int counter = 0;
+            //if (textArray[i].equals(word)) counter++;
+            countRepetitions.put(textArray[i],1);
+        }
+        
+        System.out.println(countRepetitions.size());
     }
     
 }
