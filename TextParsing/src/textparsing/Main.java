@@ -7,6 +7,7 @@ package textparsing;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -25,8 +26,15 @@ public class Main {
         //System.out.println(text);
         
         Scanner scanner = new Scanner(System.in);
-        String text = scanner.next();
-        System.out.println(text);
+        String text = scanner.nextLine();
+        //System.out.println(text);
+        String textReadeble = text.replace(".","").replace(",", "").replace("!", "").toLowerCase();
+      //  System.out.println(textReadeble);
+        
+        String[] textArray = textReadeble.split(" ");
+        
+        System.out.println(Arrays.toString(textArray));
+        
     }
     
 }
