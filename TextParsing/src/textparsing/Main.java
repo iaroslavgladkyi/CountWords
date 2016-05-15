@@ -27,6 +27,7 @@ public class Main {
         //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         //String text = reader.readLine();
         //System.out.println(text);
+        System.out.println("please note, enter your text without paragraphes!!!");
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
         //System.out.println(text);
@@ -36,7 +37,7 @@ public class Main {
         String[] textArray = textReadeble.split(" ");
         Arrays.sort(textArray);
 
-        System.out.println(Arrays.toString(textArray));
+        //System.out.println(Arrays.toString(textArray));
         Map<String, Integer> countRepetitions = new HashMap<String, Integer>();
         Integer compareElement;
         for (String element : textArray) {
