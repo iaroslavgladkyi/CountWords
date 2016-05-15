@@ -46,8 +46,14 @@ public class Main {
 
         }
         System.out.println(countRepetitions.size());
-        System.out.println(countRepetitions);
+        //System.out.println(countRepetitions);
+
+        Set<Map.Entry<String, Integer>> entrySet = countRepetitions.entrySet();
+        for (Map.Entry<String, Integer> entry : entrySet) {
+            System.out.print(entry.getKey() + ": ");
+            System.out.println(entry.getValue());
+
+        }
 
     }
-
 }
