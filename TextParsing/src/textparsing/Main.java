@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  *
@@ -22,29 +23,31 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         //String text = reader.readLine();
         //System.out.println(text);
-        
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
         //System.out.println(text);
-        String textReadeble = text.replace(".","").replace(",", "").replace("!", "").replace("?", "").toLowerCase();
-      //  System.out.println(textReadeble);
-        
+        String textReadeble = text.replace(".", "").replace(",", "").replace("!", "").replace("?", "").toLowerCase();
+        //  System.out.println(textReadeble);
+
         String[] textArray = textReadeble.split(" ");
-        
-       System.out.println(Arrays.toString(textArray));
-        Map<String,Integer> countRepetitions = new HashMap<String,Integer>();
-        
-        for (int i = 0; i < textArray.length; i++){
-            //int counter = 0;
-            //if (textArray[i].equals(word)) counter++;
-            countRepetitions.put(textArray[i],1);
+        Arrays.sort(textArray);
+
+        System.out.println(Arrays.toString(textArray));
+        Map<String, Integer> countRepetitions = new HashMap<String, Integer>();
+        Integer compareElement;
+        for (String element : textArray) {
+
+            compareElement = countRepetitions.get(element);
+            countRepetitions.put(element, compareElement == null ? 1 : compareElement + 1);
+
         }
-        
         System.out.println(countRepetitions.size());
+        System.out.println(countRepetitions);
+
     }
-    
+
 }
