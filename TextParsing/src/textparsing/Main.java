@@ -27,14 +27,22 @@ public class Main {
         //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         //String text = reader.readLine();
         //System.out.println(text);
-        System.out.println("please note, enter your text without paragraphes!!!");
+        System.out.println("please note, enter your text (without paragraphes)!!!");
         Scanner scanner = new Scanner(System.in);
-        String text = scanner.nextLine();
+        String textReadeble = "";
+        while (scanner.hasNextLine()) {
+            String text = scanner.nextLine();
+            
+            if (text.equals("end")) {
+                break;
+            }
+            
+            textReadeble += text.toLowerCase() + "\n";
+        }
         //System.out.println(text);
-        String textReadeble = text.replace(".", "").replace(",", "").replace("!", "").replace("?", "").toLowerCase();
-        //  System.out.println(textReadeble);
 
-        String[] textArray = textReadeble.split(" ");
+        //  System.out.println(textReadeble);
+        String[] textArray = textReadeble.split("[\\s\\.,!,?]+");
         Arrays.sort(textArray);
 
         //System.out.println(Arrays.toString(textArray));
